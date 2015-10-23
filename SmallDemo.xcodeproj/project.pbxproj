@@ -43,6 +43,14 @@
 		33A78E131BDA954D00D661AC /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A78DF41BDA954D00D661AC /* SVIndefiniteAnimatedView.m */; settings = {ASSET_TAGS = (); }; };
 		33A78E141BDA954D00D661AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33A78DF51BDA954D00D661AC /* SVProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
 		33A78E151BDA954D00D661AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A78DF71BDA954D00D661AC /* SVProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		33A78E221BDA976200D661AC /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E171BDA976200D661AC /* ActivityDetail.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E231BDA976200D661AC /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E181BDA976200D661AC /* AppConfig.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E241BDA976200D661AC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E1A1BDA976200D661AC /* Dictionary.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E251BDA976200D661AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E1B1BDA976200D661AC /* String.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E261BDA976200D661AC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E1C1BDA976200D661AC /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E271BDA976200D661AC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E1E1BDA976200D661AC /* UIHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E281BDA976200D661AC /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E1F1BDA976200D661AC /* UserDefaultsHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		33A78E291BDA976200D661AC /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A78E211BDA976200D661AC /* TextBoxView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +123,14 @@
 		33A78DF51BDA954D00D661AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		33A78DF61BDA954D00D661AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		33A78DF71BDA954D00D661AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		33A78E171BDA976200D661AC /* ActivityDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
+		33A78E181BDA976200D661AC /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		33A78E1A1BDA976200D661AC /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		33A78E1B1BDA976200D661AC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		33A78E1C1BDA976200D661AC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		33A78E1E1BDA976200D661AC /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		33A78E1F1BDA976200D661AC /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		33A78E211BDA976200D661AC /* TextBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +147,7 @@
 		33A78B931BDA7F9300D661AC = {
 			isa = PBXGroup;
 			children = (
+				33A78E161BDA976200D661AC /* Class */,
 				33A78DB61BDA954D00D661AC /* Library */,
 				33A78B9E1BDA7F9300D661AC /* SmallDemo */,
 				33A78B9D1BDA7F9300D661AC /* Products */,
@@ -259,6 +276,45 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		33A78E161BDA976200D661AC /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				33A78E171BDA976200D661AC /* ActivityDetail.swift */,
+				33A78E181BDA976200D661AC /* AppConfig.swift */,
+				33A78E191BDA976200D661AC /* Extension */,
+				33A78E1D1BDA976200D661AC /* Helper */,
+				33A78E201BDA976200D661AC /* UserControl */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		33A78E191BDA976200D661AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				33A78E1A1BDA976200D661AC /* Dictionary.swift */,
+				33A78E1B1BDA976200D661AC /* String.swift */,
+				33A78E1C1BDA976200D661AC /* SwiftyJSON.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		33A78E1D1BDA976200D661AC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				33A78E1E1BDA976200D661AC /* UIHelper.swift */,
+				33A78E1F1BDA976200D661AC /* UserDefaultsHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		33A78E201BDA976200D661AC /* UserControl */ = {
+			isa = PBXGroup;
+			children = (
+				33A78E211BDA976200D661AC /* TextBoxView.swift */,
+			);
+			path = UserControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +389,7 @@
 				33A78E0E1BDA954D00D661AC /* UIImage+MultiFormat.m in Sources */,
 				33A78E0F1BDA954D00D661AC /* UIImage+WebP.m in Sources */,
 				33A78DF81BDA954D00D661AC /* AFHTTPRequestOperation.m in Sources */,
+				33A78E261BDA976200D661AC /* SwiftyJSON.swift in Sources */,
 				33A78E0A1BDA954D00D661AC /* SDWebImageManager.m in Sources */,
 				33A78BA41BDA7F9300D661AC /* SecondViewController.swift in Sources */,
 				33A78DF91BDA954D00D661AC /* AFHTTPRequestOperationManager.m in Sources */,
@@ -341,22 +398,29 @@
 				33A78E011BDA954D00D661AC /* MGSwipeButton.m in Sources */,
 				33A78E151BDA954D00D661AC /* SVProgressHUD.m in Sources */,
 				33A78DFB1BDA954D00D661AC /* AFNetworkReachabilityManager.m in Sources */,
+				33A78E241BDA976200D661AC /* Dictionary.swift in Sources */,
+				33A78E291BDA976200D661AC /* TextBoxView.swift in Sources */,
 				33A78DFF1BDA954D00D661AC /* AFURLResponseSerialization.m in Sources */,
 				33A78E131BDA954D00D661AC /* SVIndefiniteAnimatedView.m in Sources */,
+				33A78E271BDA976200D661AC /* UIHelper.swift in Sources */,
 				33A78DFD1BDA954D00D661AC /* AFURLConnectionOperation.m in Sources */,
 				33A78E031BDA954D00D661AC /* MKAnnotationView+WebCache.m in Sources */,
 				33A78DFC1BDA954D00D661AC /* AFSecurityPolicy.m in Sources */,
 				33A78E041BDA954D00D661AC /* NSData+ImageContentType.m in Sources */,
+				33A78E221BDA976200D661AC /* ActivityDetail.swift in Sources */,
 				33A78E0D1BDA954D00D661AC /* UIImage+GIF.m in Sources */,
 				33A78E0C1BDA954D00D661AC /* UIButton+WebCache.m in Sources */,
 				33A78DFA1BDA954D00D661AC /* AFHTTPSessionManager.m in Sources */,
 				33A78E0B1BDA954D00D661AC /* SDWebImagePrefetcher.m in Sources */,
 				33A78E071BDA954D00D661AC /* SDWebImageDecoder.m in Sources */,
 				33A78E051BDA954D00D661AC /* SDImageCache.m in Sources */,
+				33A78E281BDA976200D661AC /* UserDefaultsHelper.swift in Sources */,
 				33A78E061BDA954D00D661AC /* SDWebImageCompat.m in Sources */,
 				33A78E121BDA954D00D661AC /* UIView+WebCacheOperation.m in Sources */,
 				33A78DFE1BDA954D00D661AC /* AFURLRequestSerialization.m in Sources */,
+				33A78E231BDA976200D661AC /* AppConfig.swift in Sources */,
 				33A78E001BDA954D00D661AC /* AFURLSessionManager.m in Sources */,
+				33A78E251BDA976200D661AC /* String.swift in Sources */,
 				33A78E091BDA954D00D661AC /* SDWebImageDownloaderOperation.m in Sources */,
 				33A78BA01BDA7F9300D661AC /* AppDelegate.swift in Sources */,
 				33A78E111BDA954D00D661AC /* UIImageView+WebCache.m in Sources */,
