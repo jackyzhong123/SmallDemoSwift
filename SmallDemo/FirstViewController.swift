@@ -8,8 +8,40 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: GlobalVC {
 
+    @IBOutlet var lblName: UILabel!
+    @IBAction func btnAction(sender: AnyObject) {
+        
+        let parameter = [
+            "xx": "zhong",
+            "uu": 11
+        ]
+        
+        self.httpPostApi(AppConfig.ConstUrl.testpost, body: parameter, tag: 11)
+        
+        
+        
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+      
+        
+        if(AppConfig.sharedAppConfig.getIsNeedShowLanuchPage())
+        {
+            
+            let  vc = UIHelper.GetVCWithIDFromStoryBoard(.Public, viewControllerIdentity: "StartUpVC")
+            
+            AppConfig.sharedAppConfig.setIsNeedShowLanuchPage(false);
+            
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

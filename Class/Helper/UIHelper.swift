@@ -105,7 +105,7 @@ class UIHelper {
             sid="Find"
             break;
             
-        default :
+        default:
             sid = "";
             break;
         }
@@ -285,141 +285,9 @@ class UIHelper {
     }
     
     
-    static func saveEditImageToLocal(img:UIImage,strName:String)
-    {
-        var imgName = strName
-        if(strName == "")
-        {
-            imgName = "tempEdit.png"
-        }
-        //var paths:NSArray =
-        var docs=NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        
-        var filePath:String =  docs[0].stringByAppendingPathComponent(imgName);
-        print("save editImg to path:" + filePath);
-        var result:Bool = UIImagePNGRepresentation(img).writeToFile(filePath, atomically: true);
-    }
-    //保存通办照片
-    static func autoSaveCommonImg(img:UIImage)
-    {
-        var image:CIImage =  CIImage(image:img);
-        
-        var detector:CIDetector = CIDetector(ofType:CIDetectorTypeFace, context: nil, options:[CIDetectorAccuracy: CIDetectorAccuracyHigh]);
-        var features:[CIFaceFeature]! = detector.featuresInImage(image) as! [CIFaceFeature]
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            if(features.count==0)
-            {
-                print("未检测出合法的人像,请重新拍摄")
-            }
-            else
-            {
-                print("检测到人脸")
-            }
-            for faceItem in features
-            {
-                var waitOperationImg:UIImage = img
-                var face = faceItem as CIFaceFeature
-                if (face.hasLeftEyePosition && face.hasRightEyePosition && face.hasMouthPosition) {
-                    var faceWidth = fabs(face.leftEyePosition.x-face.rightEyePosition.x);
-                    var faceHeight = fabs(face.mouthPosition.y-min(face.leftEyePosition.y, face.rightEyePosition.y));
-                    var faceRect:CGRect = CGRectMake(min(face.leftEyePosition.x, face.rightEyePosition.x),
-                        waitOperationImg.size.height - min(face.leftEyePosition.y, face.rightEyePosition.y),
-                        faceWidth, faceHeight);
-                    var faceCenter:CGPoint = CGPointMake(faceRect.origin.x + faceWidth/2, faceRect.origin.y + faceHeight/2);
-                    NSLog("Face Rect %f %f %f %f", faceRect.origin.x, faceRect.origin.y, faceRect.size.width, faceRect.size.height);
-                    //计算Crop区域
-                    var widthRatio:CGFloat = 2.5 * 2.0 ;
-                    var headRatio:CGFloat = 3.0 * 2.0;
-                    var bodyRatio:CGFloat = 3.5 * 2.0;
-                    var cropRect:CGRect = CGRectMake(faceCenter.x-faceWidth*widthRatio, (faceCenter.y-faceHeight*headRatio), faceWidth*widthRatio*2, faceHeight*(headRatio+bodyRatio));
-                    
-                    
-                    NSLog("CommonIMG Crop Rect %f %f %f %f", cropRect.origin.x, cropRect.origin.y, cropRect.size.width, cropRect.size.height);
-                    
-//                    var commonImg:UIImage = waitOperationImg.croppedPhoto(waitOperationImg, toRect: cropRect, isNeedAutoResize: false)
-//                    
-//                    self.saveEditImageToLocal(commonImg, strName: self.strCommonImgName);
-                    
-                    break;
-                    
-                }
-            }
-        })
-    }
-    /*
-    获取当前通办照片
-    */
-    static func getCommonImg()->UIImage
-    {
-        let resut = self.readEditImageFromLocalByName(strCommonImgName);
-        return resut
-    }
-    /*
-    获取当前最终确认的需要提交的照片
-    */
-    static func getSubmitImg()->UIImage
-    {
-        let resut = self.readEditImageFromLocalByName(strSubmitImgName);
-        return resut
-    }
+ 
+   
     
-    
-    /*
-    获取当前照片剪贴后的照片
-    */
-    static func getFinalImageSize(strFinalImageName:String)->Int
-    {
-        var strImageName = strFinalImageName
-        if(strFinalImageName == "")
-        {
-            strImageName = "final.jpg"
-        }
-        var result = -1;
-        var docs=NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let filePath:String =  docs[0].stringByAppendingPathComponent(strImageName);
-        
-        let filemanager:NSFileManager =  NSFileManager()
-        if(filemanager.fileExistsAtPath(filePath))
-        {
-            let attributes:NSDictionary = try! filemanager.attributesOfItemAtPath(filePath);
-            // file size
-            let theFileSize = attributes.objectForKey(NSFileSize)!.intValue
-            result = Int(theFileSize)
-            
-        }
-        return result
-    }
-    static func readEditImageFromLocal()->UIImage
-    {
-        //var paths:NSArray =
-        let strName = "tempEdit.png"
-        var docs=NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let filePath:String =  docs[0].stringByAppendingPathComponent(strName);
-        let img:UIImage = UIImage(contentsOfFile: filePath)!;
-        
-        return img;
-    }
-    
-    static func readEditImageFromLocalByName(imgName:String)->UIImage
-    {
-        //var paths:NSArray =
-        var strName = "tempEdit.png"
-        if(imgName.length>0)
-        {
-            strName = imgName
-        }
-        var docs=NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let filePath:String =  docs[0].stringByAppendingPathComponent(strName);
-        let img:UIImage = UIImage(contentsOfFile: filePath)!;
-        
-        return img;
-    }
-    
-    static func imageToBase64(image:UIImage )->String {
-        var imageData:NSData = UIImageJPEGRepresentation(image, 1)
-        return imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
-    }
     
     static func getCachedFilePath(relative:String)->String!
     {

@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+ 
+        if(AppConfig.sharedAppConfig.isUserLogin())
+        {
+            //顺利登陆
+            
+        }else
+        {
+            //开始去注册
+            let vc = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "LoginVC")
+            let navi =  UINavigationController(rootViewController: vc)
+            self.window?.rootViewController = navi
+        }
+ 
         return true
     }
 
