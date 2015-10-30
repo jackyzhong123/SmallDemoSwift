@@ -16,6 +16,7 @@ class ActivityDetail: NSObject {
    
     
     init(dict:NSDictionary) {
+
         super.init()
         self.OrderDetail(dict)
     }
@@ -27,5 +28,7 @@ class ActivityDetail: NSObject {
         self.ActivityId = dict.objectForKey("ActivityId") as! String
       
     }
+    
+    
     
 }
